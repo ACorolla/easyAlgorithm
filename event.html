@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+<ul id="closure_test">
+    <li class="closureLi_test" data-index="1">111</li>
+    <li class="closureLi_test" data-index="2">222</li>
+    <li class="closureLi_test" data-index="3">333</li>
+</ul>
+<script>
+    //todo ul下三个li弹出索引
+    var oUl = document.querySelector('#closure_test');
+    var ali=document.querySelectorAll('.closureLi_test');
+    oUl.onclick= function (e) {
+        e=e||window.event;
+        target= e.target|| e.srcElement;
+        if(target.nodeName.toLowerCase()=='li'){
+            for(var i=0;i<ali.length;i++){
+                if(target==ali[i]){
+                    alert(i);
+                }
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

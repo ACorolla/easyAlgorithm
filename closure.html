@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>closure</title>
+</head>
+<body>
+<ul id="closure_test">
+    <li class="closureLi_test" data-index="1">111</li>
+    <li class="closureLi_test" data-index="2">222</li>
+    <li class="closureLi_test" data-index="3">333</li>
+</ul>
+<script>
+
+    //todo ul下三个li弹出索引
+    var ali=document.querySelectorAll('.closureLi_test');
+    var len=ali.length;
+    var arr=[];
+    for(var i=0;i<len;i++){
+        arr.push(ali[i]);
+        }
+    arr.forEach(function (data,index) {
+        arr[index].onclick= function () {
+            alert(index);
+        }
+    });
+//    for(var i=0;i<len;i++){
+//        (function(index){
+//            ali[i].onclick= function () {
+//                alert(index);
+//            }
+//        })(i);
+//    }
+
+
+</script>
+</body>
+</html>
