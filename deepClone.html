@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //todo 深克隆对象
+    Object.prototype.deepClone = function () {
+        var o = this.constructor === Array ? [] : {};
+        for (e in this) {
+            o[e] = typeof this[e] === 'object' ? this[e].deepClone() : this[e];
+        }
+        return o;
+    }
+</script>
+</body>
+</html>
