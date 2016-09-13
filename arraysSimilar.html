@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arraysSimilar</title>
+</head>
+<body>
+<script>
+    var arr1 = [1, true, null];
+    var arr2 = [null, false, 100];
+    function arraysSimilar(arr1,arr2){
+        console.log(toType(arr1)==toType(arr2));
+    }
+
+    function toType(arr){
+        return arr.map(function (data) {
+            return Object.prototype.toString.call(data);
+        }).sort().toString();
+    }
+
+    arraysSimilar(arr1,arr2);
+</script>
+
+</body>
+</html>
